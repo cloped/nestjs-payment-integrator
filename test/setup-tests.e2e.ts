@@ -8,7 +8,6 @@ let postgresClient: Client;
 let prismaService: PrismaService;
 
 beforeAll(async () => {
-    //connect our container 
     postgresContainer = await new PostgreSqlContainer('postgres:15').start();
 
     postgresClient = new Client({
