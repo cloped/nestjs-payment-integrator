@@ -23,9 +23,9 @@ beforeAll(async () => {
     const databaseUrl = `postgresql://${postgresClient.user}:${postgresClient.password}@${postgresClient.host}:${postgresClient.port}/${postgresClient.database}`;
     execSync("npx prisma migrate dev", {
         stdio: 'inherit',
-        shell: 'bash', // necessário para encontrar o npx em alguns ambientes
+        shell: 'bash',
         env: {
-            ...process.env, // herda o PATH e outras variáveis
+            ...process.env,
             DATABASE_URL: databaseUrl,
         },
     });
